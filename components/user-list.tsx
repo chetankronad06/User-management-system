@@ -24,11 +24,10 @@ interface UserListProps {
   users: UserType[]
   onEdit: (user: UserType) => void
   onDelete: (id: number) => void
-  isLoading?: boolean
   onUserClick?: (user: UserType) => void // Add this line
 }
 
-export function UserList({ users, onEdit, onDelete, isLoading, onUserClick }: UserListProps) {
+export function UserList({ users, onEdit, onDelete, onUserClick }: UserListProps) {
   const [deleteUserId, setDeleteUserId] = useState<number | null>(null)
 
   const getRoleBadgeVariant = (role: string) => {

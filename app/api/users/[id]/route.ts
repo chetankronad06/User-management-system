@@ -14,7 +14,7 @@ export async function GET(request: NextRequest, { params }: { params: { id: stri
 
     return NextResponse.json(user)
   } catch (error) {
-    return NextResponse.json({ error: "Failed to fetch user" }, { status: 500 })
+    return NextResponse.json({ error: error }, { status: 500 })
   }
 }
 
@@ -45,6 +45,6 @@ export async function DELETE(request: NextRequest, { params }: { params: { id: s
 
     return NextResponse.json({ message: "User deleted successfully" })
   } catch (error) {
-    return NextResponse.json({ error: "Failed to delete user" }, { status: 500 })
+    return NextResponse.json({ error: error }, { status: 500 })
   }
 }

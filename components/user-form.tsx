@@ -12,7 +12,7 @@ import { Loader2, X } from "lucide-react"
 import type { UserFormData } from "@/lib/validations"
 
 interface UserFormProps {
-  user?: any
+  user?: UserFormData
   onSubmit: (data: UserFormData) => Promise<void>
   onCancel: () => void
   isLoading?: boolean
@@ -87,7 +87,7 @@ export function UserForm({ user, onSubmit, onCancel, isLoading }: UserFormProps)
 
           <div className="space-y-2">
             <Label htmlFor="role">Role</Label>
-            <Select value={formData.role} onValueChange={(value) => setFormData({ ...formData, role: value as any })}>
+            <Select value={formData.role} onValueChange={(value) => setFormData({ ...formData, role: value as "user" | "admin" | "moderator" })}>
               <SelectTrigger>
                 <SelectValue placeholder="Select a role" />
               </SelectTrigger>
